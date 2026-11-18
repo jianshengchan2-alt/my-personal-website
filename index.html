@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>My Personal Website</title>
-
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-color: #bb2f2f;
@@ -176,24 +176,53 @@
             box-shadow: 0 10px 30px rgba(247, 5, 5, 0.5);
             backdrop-filter: blur(10px);
 }
+       
         @media (max-width: 600px) {
 
             .card {
                 flex-direction: column;
     }
+
             .calculator {
                 width: 90%;
                 max-width: 300px;
+                box-sizing: border-box;
     }
+
+            .calculator-buttons {
+                gap: 10px;
+    }
+
+            .calculator-buttons button {
+                touch-action: manipulation;
+                transition: none;
+                transform: none;
+    }
+
+            .calculator-buttons button:hover {
+                transform: none;
+    }
+
             h1 {
                 font-size: 26px;
     }
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 10px;
     }
-}       @media (min-width: 601px) and (max-width: 900px) {
+
+    /* Reduce blur effects on mobile */
+            .card,
+            #about,
+            #projects,
+            #contact {
+                 backdrop-filter: none;
+    }
+}
+
+        @media (min-width: 601px) and (max-width: 900px) {
             .calculator {
                 width: 70%;
     }
@@ -212,6 +241,13 @@
         .project-card:hover {
             transform: scale(1.05) translateY(-10px);
             box-shadow: 0 10px 20px gray;
+
+}
+        /* Improve mobile touch response */
+        button,
+        .nav-links a {
+            touch-action: manipulation;
+}
     </style>
 </head>
 
