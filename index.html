@@ -5,6 +5,9 @@
     <title>My Personal Website</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        * {
+            box-sizing: border-box;
+}
         body {
             background-color: #bb2f2f;
             font-family: Arial, sans-serif;
@@ -177,48 +180,79 @@
             backdrop-filter: blur(10px);
 }
        
-        @media (max-width: 600px) {
+@media (max-width: 600px) {
 
-            .card {
-                flex-direction: column;
+    body {
+        padding: 10px;
     }
 
-            .calculator {
-                width: 90%;
-                max-width: 300px;
-                box-sizing: border-box;
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
     }
 
-            .calculator-buttons {
-                gap: 10px;
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
-            .calculator-buttons button {
-                touch-action: manipulation;
-                transition: none;
-                transform: none;
+    .card {
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+        margin: 50px auto;
     }
 
-            .calculator-buttons button:hover {
-                transform: none;
+    .person {
+        width: 100%;
+        padding: 20px;
+        margin: 10px auto;
     }
 
-            h1 {
-                font-size: 26px;
+    .person:hover {
+        transform: none;
     }
 
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
+    h1 {
+        font-size: 26px;
     }
 
-    /* Reduce blur effects on mobile */
-            .card,
-            #about,
-            #projects,
-            #contact {
-                 backdrop-filter: none;
+    #about,
+    #projects,
+    #contact {
+        width: 100%;
+        padding: 20px;
+        margin: 40px auto;
+        backdrop-filter: none;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .calculator {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .calculator-buttons {
+        gap: 10px;
+    }
+
+    .calculator-buttons button {
+        touch-action: manipulation;
+        transition: none;
+    }
+
+    .calculator-buttons button:hover {
+        transform: none;
     }
 }
 
