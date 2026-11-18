@@ -88,6 +88,7 @@
             margin: 50px auto;
             border-radius: 20px;
             box-shadow: 0 0 8px gray;
+            box-sizing: border-box;
 }
 
          .calculator h2 {
@@ -95,8 +96,8 @@
 
         .calculator-buttons {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
         }
         .calculator-buttons button {
             width: 100%;
@@ -104,7 +105,10 @@
             font-size: 20px;
             border: none;
             border-radius: 10px;
-            cursor: pointer;}
+            cursor: pointer;
+            min-width: 0;
+            padding: 8px 2px;
+        }
         .calculator-buttons button:hover {
             background-color: rgb(177, 238, 10);
             color: rgb(116, 6, 241);
@@ -237,6 +241,8 @@
         width: 100%;
         min-width: 0;
         padding: 15px;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
 }
 
     .project-card:hover {
