@@ -17,7 +17,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
         }
 
         .card {
@@ -329,15 +328,36 @@
 
         alert("My name is " + name + " and I am " + age + " years old");
 
-        function changeText() {
-            document.getElementById("message").innerHTML = "Hello Jian Sheng!";
+       let isChanged = false;
 
-            document.getElementById("message").style.color = "red";
+function changeText() {
 
-            document.body.style.backgroundImage = "none";
+    if (isChanged === false) {
 
-            document.body.style.backgroundColor = "blue";
-        }
+        document.getElementById("message").innerHTML = "Hello Jian Sheng!";
+
+        document.getElementById("message").style.color = "red";
+
+        document.body.style.backgroundImage = "none";
+
+        document.body.style.backgroundColor = "blue";
+
+        isChanged = true;
+    }
+
+    else {
+
+        document.getElementById("message").innerHTML = "Welcome to my website!";
+
+        document.getElementById("message").style.color = "";
+
+        document.body.style.backgroundImage = "";
+
+        document.body.style.backgroundColor = "";
+
+        isChanged = false;
+    }
+}
        let count = 0;
 
          function addNumber() {
