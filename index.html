@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+
+    <style>
+        body {
+            background-color: #bb2f2f;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            color: rgb(7, 240, 77);
+            padding: 20px;
+
+            background-image: url("https://media.licdn.com/dms/image/v2/D4D12AQFi6GSt7yZSJA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1702618998711?e=2147483647&v=beta&t=tANVusrBRSsLagaOMU75nX-1_QtwYTeR0V5pJuqOXmg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 60px;
+            padding: 20px;
+            margin: 120px auto;
+            width: 90%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-direction: row;
+
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .person {
+            display: flex;
+            background-color: rgba(58, 7, 196, 0.7);
+            border-radius: 50px;
+            padding: 40px;
+            margin: 20px auto;
+            width: 100%;
+            box-shadow: 0px 0px 40px rgba(6, 231, 6, 0.1);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .person:hover {
+            transform: scale(1.1) translateY(-30px);
+            box-shadow: 0 15px 30px gray;
+            opacity: 0.7;
+        }
+
+        h1 {
+            color: rgb(233, 3, 3);
+            font-size: 30px;
+        }
+
+        p {
+            color: rgb(248, 2, 2);
+            font-size: 20px;
+        }
+
+        button {
+            background-color: #0ce466;
+            color: rgb(240, 8, 8);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: blue;
+            transform: translateY(-5px);
+        }
+        .calculator {
+            background-color: rgb(195, 236, 10);
+            width: 300px;
+            padding: 25px;
+            margin: 50px auto;
+            border-radius: 20px;
+            box-shadow: 0 0 20px gray;
+}
+
+         .calculator h2 {
+            color: black;}
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .calculator-buttons button {
+            width: 100%;
+            height: 55px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;}
+        .calculator-buttons button:hover {
+            background-color: rgb(177, 238, 10);
+            color: rgb(116, 6, 241);
+}
+         #display {
+            width: 90%;
+            height: 45px;
+            font-size: 25px;
+            text-align: right;
+            margin-bottom: 15px;
+}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 15px 30px;
+            border-radius: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+}
+
+        .navbar h2 {
+            color: white;
+            margin: 0;
+}
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+}
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+}
+
+        .nav-links a:hover {
+            color: orange;
+}
+        section {
+            scroll-margin-top: 350px;
+}
+        #about {
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 80%;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(243, 6, 6, 0.5);
+            backdrop-filter: blur(10px);
+}
+        #projects {
+            background-color: rgba(14, 173, 61, 0.7);
+            width: 80%;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(196, 240, 4, 0.5);
+            backdrop-filter: blur(10px);
+}
+        #contact {
+            background-color: rgba(215, 252, 10, 0.7);
+            width: 80%;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(247, 5, 5, 0.5);
+            backdrop-filter: blur(10px);
+}
+        @media (max-width: 600px) {
+
+            .card {
+                flex-direction: column;
+    }
+            .calculator {
+                width: 90%;
+                max-width: 300px;
+    }
+            h1 {
+                font-size: 26px;
+    }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+    }
+}       @media (min-width: 601px) and (max-width: 900px) {
+            .calculator {
+                width: 70%;
+    }
+}
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+}
+        .project-card {
+            background-color: rgba(7, 30, 241, 0.3);
+            padding: 20px;
+            border-radius: 20px;
+             transition: 0.3s;
+}
+        .project-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 10px 20px gray;
+    </style>
+</head>
+
+<body>
+    <div id="home"></div>
+<nav class="navbar">
+
+    <h2>Jian Sheng</h2>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+    <div class="card">
+
+        <div class="person">
+            <h1>My Name</h1>
+            <p>jiansheng</p>
+        </div>
+
+        <div class="person">
+            <h1>your name</h1>
+            <p>zhen hao</p>
+        </div>
+
+        <p id="message">Welcome to my website!</p>
+        <h1 id="number">0</h1>
+
+        <button onclick="alert('Hello Jian Sheng!')">Click Me</button>
+
+        <button onclick="changeText()">Change Text</button>
+
+        <button onclick="addNumber()">Add Number</button>
+
+    </div>
+    <section id="about">
+    <h1>About Me</h1>
+    <p>Hello! My name is Jian Sheng.</p>
+    <p>I am learning HTML, CSS and JavaScript.</p>
+</section>  
+
+<section id="projects">
+
+    <h1>My Projects</h1>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <h2>My First Website</h2>
+            <p>This is my first HTML and CSS project.</p>
+        </div>
+
+        <div class="project-card">
+            <h2>My Calculator</h2>
+            <p>This is a calculator created using JavaScript.</p>
+        </div>
+
+    </div>
+
+</section>
+<div class="calculator">
+
+    <h2>My Calculator</h2>
+
+    <input type="text" id="display" readonly>
+    <div class="calculator-buttons">
+
+    
+
+<button onclick="pressNumber('7')">7</button>
+<button onclick="pressNumber('8')">8</button>
+<button onclick="pressNumber('9')">9</button>
+<button onclick="pressOperator('+')">+</button>
+
+
+
+<button onclick="pressNumber('4')">4</button>
+<button onclick="pressNumber('5')">5</button>
+<button onclick="pressNumber('6')">6</button>
+<button onclick="pressOperator('-')">-</button>
+
+
+
+<button onclick="pressNumber('1')">1</button>
+<button onclick="pressNumber('2')">2</button>
+<button onclick="pressNumber('3')">3</button>
+<button onclick="pressOperator('*')">*</button>
+
+
+<button onclick="pressNumber('0')">0</button>
+<button onclick="pressDecimal()">.</button>
+<button onclick="changeSign()">+/-</button>
+<button onclick="pressOperator('/')">/</button>
+<button onclick="calculate()">=</button>
+<button onclick="clearDisplay()">C</button>
+<button onclick="backspace()">⌫</button>
+</div>
+</div>
+<section id="contact">
+
+    <h1>Contact Me</h1>
+
+    <p>Email: yourname@gmail.com</p>
+
+    <p>Feel free to contact me!</p>
+
+</section>
+    <script>
+        let name = "Jian Sheng";
+        let age = 21;
+
+        alert("My name is " + name + " and I am " + age + " years old");
+
+        function changeText() {
+            document.getElementById("message").innerHTML = "Hello Jian Sheng!";
+
+            document.getElementById("message").style.color = "red";
+
+            document.body.style.backgroundImage = "none";
+
+            document.body.style.backgroundColor = "blue";
+        }
+       let count = 0;
+
+         function addNumber() {
+         count = count + 1;
+            document.getElementById("number").innerHTML = count;
+        }
+        let firstNumber = "";
+        let operator = "";
+         function pressNumber(number) {
+            document.getElementById("display").value += number;
+        }
+        function pressDecimal() {
+        let displayValue = document.getElementById("display").value;
+
+        if (displayValue === "") {
+        document.getElementById("display").value = "0.";
+    }
+        else if (!displayValue.includes(".")) {
+        document.getElementById("display").value += ".";
+    }
+}
+        function changeSign() {
+    let displayValue = document.getElementById("display").value;
+
+    if (displayValue !== "" && displayValue !== "0") {
+        if (displayValue.startsWith("-")) {
+            document.getElementById("display").value = displayValue.slice(1);
+        }
+        else {
+            document.getElementById("display").value = "-" + displayValue;
+        }
+    }
+}
+       function pressOperator(symbol) {
+
+    let displayValue = document.getElementById("display").value;
+
+    if (displayValue !== "") {
+
+        if (operator !== "") {
+            calculate();
+        }
+        else {
+            firstNumber = displayValue;
+        }
+    }
+
+    operator = symbol;
+
+    document.getElementById("display").value = "";
+}
+        function calculate() {
+
+    let secondNumber = document.getElementById("display").value;
+
+    let result;
+    if (operator === "") {
+    return;
+}
+
+    if (operator === "+") {
+        result = Number(firstNumber) + Number(secondNumber);
+    }
+
+    else if (operator === "-") {
+        result = Number(firstNumber) - Number(secondNumber);
+    }
+
+    else if (operator === "*") {
+        result = Number(firstNumber) * Number(secondNumber);
+    }
+
+    else if (operator === "/") {
+
+        if (Number(secondNumber) === 0) {
+
+            document.getElementById("display").value = "Cannot divide by zero";
+
+            firstNumber = "";
+            operator = "";
+
+            return;
+        }
+
+        result = Number(firstNumber) / Number(secondNumber);
+    }
+
+
+        document.getElementById("display").value = result;
+        firstNumber = result;
+        operator = "";
+        return result;
+    }
+
+    function clearDisplay() {
+    document.getElementById("display").value = "";
+    firstNumber = "";
+    operator = "";
+    }
+    function backspace() {
+    let displayValue = document.getElementById("display").value;
+
+    document.getElementById("display").value = displayValue.slice(0, -1);
+}
+
+    firstNumber = "";
+    operator = "";
+    </script>
+</body>
+</html>
